@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import productRoutes from './routes/productRoutes'
+import productRoutes from './routes/productRoutes';
+import categoryRoutes from './routes/categoryRoutes';
 
 
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000; 
 
 app.use('/api/products', productRoutes);
+app.use('/api/categories', categoryRoutes);
 
 app.get('/', (req,res) => {
     res.send('Welcome to XXX API');
